@@ -30,4 +30,15 @@ public class UserLogic {
         userInfoDto.setRole(userRoles.getRole().getName());
         return userInfoDto;
     }
+
+
+    public UserInfoDto getUserAndRoleInfoByUserEmail(String userEmail){
+        UserInfoDto userInfoDto = new UserInfoDto();
+        Users userInfo = userRepo.getByEmail(userEmail);
+        UserRoles userRoles = userRolesRepo.getUserRolesByUser(userInfo);
+        userInfoDto.setUserName(userInfo.getUserName());
+        userInfoDto.setEmail(userInfo.getEmail());
+        userInfoDto.setRole(userRoles.getRole().getName());
+        return userInfoDto;
+    }
 }

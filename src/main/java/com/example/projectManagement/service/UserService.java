@@ -31,6 +31,10 @@ public class UserService {
         return userRepo.save(user);
     }
 
+    public UserInfoDto getUserAndRoleInfoByUserEmail(String userEmail) {
+        return userLogic.getUserAndRoleInfoByUserEmail(userEmail);
+    }
+
 
 
 }

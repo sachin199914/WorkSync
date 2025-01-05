@@ -11,7 +11,7 @@ import lombok.*;
 public class Roles {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "roleId")
+    @Column(name = "roleid")
     private Long roleId;
 
     @Column(name = "name", unique = true, nullable = false, length = 50)

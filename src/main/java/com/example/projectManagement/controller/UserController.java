@@ -28,6 +28,11 @@ public class UserController {
         return userService.getUserAndRoleInfoByUserId(id);
     }
 
+    @GetMapping("/byEmail/{userEmail}")
+    public UserInfoDto getUserByUserEmail(@PathVariable String userEmail) {
+        return userService.getUserAndRoleInfoByUserEmail(userEmail);
+    }
+
     @PostMapping("/create")
     public ResponseEntity<String> createUser(@RequestBody UserDto user) { 
         Users users = userService.createUser(user);
